@@ -18,11 +18,11 @@ import java.util.List;
 @Service
 public class KubeClient {
     CMDService cmdService;
+    @Autowired(required = false)
     AzureResourceManager azureResourceManager;
     @Autowired
-    public KubeClient(CMDService cmdService, AzureResourceManager azureResourceManager){
+    public KubeClient(CMDService cmdService){
         this.cmdService = cmdService;
-        this.azureResourceManager = azureResourceManager;
     }
 
     /**
