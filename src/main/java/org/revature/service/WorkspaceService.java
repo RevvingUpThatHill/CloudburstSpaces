@@ -32,6 +32,8 @@ public class WorkspaceService {
         w.setLastActivity(new Timestamp(System.currentTimeMillis()));
         w.setLastOverwrite(new Timestamp(System.currentTimeMillis()));
         w.setActive(true);
+//        TODO: need a better naming scheme for pod name. this is a placeholder.
+        w.setContainerName("ws"+Math.random()*Integer.MAX_VALUE);
         workspaceRepository.save(w);
         kubeClient.spinupPod(w);
 //        TODO: Sidecar image must be pushed to dockerhub.
