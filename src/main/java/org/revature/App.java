@@ -20,8 +20,14 @@ public class App {
         ApplicationContext context = SpringApplication.run(App.class);
     }
 
+    /**
+     * TODO: refactor kubectl commands to use the Azure client instead.
+     * Commenting this for now to prevent exception throws on startup.
+     * @return
+     */
     @Bean
     public AzureResourceManager azureResourceManagerBean(){
+        /**
         AzureProfile profile = new AzureProfile(AzureEnvironment.AZURE);
         TokenCredential credential = new DefaultAzureCredentialBuilder()
                 .build();
@@ -30,5 +36,7 @@ public class App {
                 .withLogLevel(HttpLogDetailLevel.BASIC)
                 .authenticate(credential, profile)
                 .withDefaultSubscription();
+         **/
+        return null;
     }
 }
